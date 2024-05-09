@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q5 - 변수/연산자</title>
+
+    <script type="text/javascript">
+        function getMovie() {
+            movieName = "달러";
+            moviePrice = 10000;
+            movieDiscount = "5";
+            movieSee = "N";
+            if (movieSee == "N") {
+                alert("영화의 제목은 " + movieName + "이고," + "영화 관람료는 " + moviePrice + " 영화 할인율은 " + movieDiscount + "%이며, 영화 관람은 못봤음.");
+            }
+        }
+        function getIcecream() {
+            ggobugi = 1000;
+            ggobugiCnt = 2;
+            merona = 2000;
+            meronaCnt = 3;
+            alert("꼬북이 구매 가격은 "+ggobugi*ggobugiCnt+"원이고, 메로나 구매 가격은 "+merona*meronaCnt+"원\n전체 구매 가격은 "+((ggobugi*ggobugiCnt)+(merona*meronaCnt))+"원")
+        }
+    </script>
+
+</head>
+
+<body>
+    <input type="button" onclick="getMovie();" value="영화 정보 가져오기">
+    <input type="button" onclick="getIcecream();" value="아이스크림 구매 정보 가져오기">
+</body>
+
+</html>

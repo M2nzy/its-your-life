@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>media</title>
+    <style>
+        .wrapper {
+            background-color: skyblue;
+        }
+
+        .textbox {
+            width: 300px;
+            color: pink;
+            text-align: center;
+            font-weight: bold;
+            border: black 1px solid;
+            margin: 0 auto;
+        }
+
+        .greenpink {
+            background-color: green;
+        }
+
+        .yellowpink {
+            background-color: yellow;
+        }
+
+        .blackpink {
+            background-color: black;
+        }
+
+        @media screen and (max-width:767px) {
+            .greenpink_wrap {
+                display: block;
+            }
+
+            .yellowpink_wrap {
+                display: none;
+            }
+
+            .blackpink_wrap {
+                display: none;
+            }
+
+        }
+
+        @media screen and (min-width:768px) and (max-width:959px) {
+            .greenpink_wrap {
+                display: none;
+            }
+
+            .yellowpink_wrap {
+                display: block;
+            }
+
+            .blackpink_wrap {
+                display: none;
+            }
+
+        }
+
+        @media screen and (min-width:960px) {
+            .greenpink_wrap {
+                display: none;
+            }
+
+            .yellowpink_wrap {
+                display: none;
+            }
+
+            .blackpink_wrap {
+                display: block;
+            }
+
+        }
+
+        img {
+            margin: auto;
+            display: block;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="blackpink_wrap ">
+            <div class="blackpink textbox">난 블랙핑크</div>
+            <img src="../resource/rose.jpg" alt="rose" class="img">
+        </div>
+        <div class="yellowpink_wrap">
+            <div class="yellowpink textbox">난 옐로우핑크</div>
+            <img src="../resource/rose.jpg" alt="rose" class="img">
+        </div>
+        <div class="greenpink_wrap">
+            <div class="greenpink textbox">난 그린핑크</div>
+            <img src="../resource/rose.jpg" alt="rose" class="img">
+        </div>
+    </div>
+</body>
+
+</html>
