@@ -1,0 +1,25 @@
+.main {
+    color:blue;
+    font-weight: bold;
+    height: 40px;
+}
+.wrapper{
+    background-color:yellow;
+    width: 300px;
+    height: 300px;
+}
+
+.head{
+    color:green;
+    background-color: orange;
+    text-align: center;
+    font-weight: bold;
+    font-family: 궁서;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+.input{
+    background-color: rgb(206, 206, 206);
+}
