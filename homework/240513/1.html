@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        아이디
+        <input type="text" id="id" name="id">
+        <input type="button" onclick="idCheck();" value="아이디체크">
+        <p id="idResult" name="idResult"></p>
+    </div>
+    <div>
+        지식인 검색어
+        <input type="text" id="kin" name="kin">
+        <input type="button" onclick="kinSearch();" value="지식인 검색">
+    </div>
+    <div>
+        보고싶은 웹툰 입력
+        <input type="text" id="webtoonName" name="webtoonName">
+        <input type="button" onclick="webtoonSearch();" value="웹툰 검색">
+    </div>
+    <script>
+        function idCheck() {
+            inputId = document.getElementById("id").value;
+            
+            if (inputId == "root") {
+                document.getElementById("idResult").innerHTML = "아이디 성공";
+            }
+            else {
+                document.getElementById("idResult").innerHTML = "아이디 실패";
+            }
+        }
+
+        function kinSearch(){
+            searchValue = document.getElementById("kin").value;
+            
+            kinUrl = "https://kin.naver.com/search/list.naver?query="+searchValue
+            location.assign(kinUrl);
+
+        }
+
+
+        function webtoonSearch(){
+            searchValue = document.getElementById("webtoonName").value;
+            
+            webtoonUrl = "https://comic.naver.com/search?keyword="+searchValue
+            location.assign(webtoonUrl);
+        }
+    </script>
+</body>
+
+</html>

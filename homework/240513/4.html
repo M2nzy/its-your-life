@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    구매상점 입력:
+    <input type="text" id="buyName" name="buyName"><br>
+    결제금액 입력:
+    <input type="text" id="buyPrice" name="buyPrice"><br>
+    결제 수단 선택
+    <select name="payMethod" id="payMethod">
+        <option value="1">계좌이체</option>
+        <option value="2">신용카드</option>
+        <option value="3">휴대폰 결제</option>
+    </select><br>
+    <input type="button" onclick="pay();" value="결제금액 계산">
+    <p name="payResult" id="payResult"></p>
+
+
+    <script>
+        function pay(){
+            const selectBox = document.getElementById("payMethod");
+            const payMethodValue = selectBox.value;
+            const payPrice = selectBox.options[selectBox.payMethodValue].text;
+            
+            if(payMethodValue == "1"){
+                document.getElementById("payResult").innerHTML = "멀티샵에서 최종 결제 금액: "+payMethodValue+"원";
+
+            }
+            else if(payMethodValue == "2"){
+                payPrice = parseInt(payPrice);
+                payPrice += 1000;
+                document.getElementById("payResult").innerHTML = "멀티샵에서 최종 결제 금액: "+payPrice+"원";
+
+            }
+            else if(payMethodValue == "3"){
+                payPrice = parseInt(payMethodValue);
+                payPrice += 500;
+
+                document.getElementById("payResult").innerHTML = "멀티샵에서 최종 결제 금액: "+payPrice+"원";
+
+            }
+        }
+
+    </script>
+</body>
+</html>

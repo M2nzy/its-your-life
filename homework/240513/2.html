@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        아이디 입력:
+        <input type="text" id="id" name="id">
+    </div>
+    <div>
+        패스워드:
+        <input type="password" id="password1" name="password1"><br>
+        패스워드 확인:
+        <input type="password" id="password2" name="password2">
+        <br>
+        <input type="button" onclick="pwCheck();" value="확인">
+        <p name="pwResult" id="pwResult"></p>
+    </div>
+    <script>
+        function pwCheck() {
+            inputPw1 = document.getElementById("password1").value;
+            inputPw2 = document.getElementById("password2").value;
+            if (inputPw1.length < 5 || inputPw2.length < 5){
+                alert("5 미만입니다. 다시 입력해주세요.");
+            }
+
+            else if (inputPw1 == inputPw2) {
+                document.getElementById("pwResult").innerHTML = "일치!!";
+            }
+            else {
+                document.getElementById("pwResult").innerHTML = "불일치!!";
+            }
+        }
+
+    </script>
+</body>
+
+</html>
