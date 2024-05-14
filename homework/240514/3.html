@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*  const test1 = function (a, b) {
+            return a + b;
+        }
+        function test2(params) {
+            console.log(params + "님 환영합니다,!");
+
+        }
+        function test3() {
+            return "ok";
+         } */
+        test1 = (a, b) => {
+            document.write(a + b + '<br>');
+        }
+
+        test2 = (params) => document.write(params + '님 환영합니다!<br>');
+
+
+        test3 = () => { document.write("ok") };
+
+        test1(100, 200);
+        test2("test");
+        test3();
+</script>
+</body>
+
+</html>

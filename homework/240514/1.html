@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        function addContact(...args) {
+            const inform = {
+                name: args[0],
+                home: args[1],
+                address: args[2],
+                email: args[3],
+                favoritesFoods: args[4]
+            }
+
+            for (let key in inform) {
+                document.write(`${key} >> ${inform[key] || '없음'} <br>`);
+            }
+            document.write('</br>');
+
+        }
+
+
+        addContact("홍길동", "010-1234-1234");
+        addContact("이몽룡", "010-1234-1234", "02-1234-1233", "서울시");
+        addContact("이몽룡", "010-1234-1234",  "서울시", "hero@email.com", "감자", "고구마");
+
+    </script>
+</body>
+
+</html>
