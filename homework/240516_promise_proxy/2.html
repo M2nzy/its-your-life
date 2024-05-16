@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="run();">실행</button>
+    <p id="text"></p>
+
+    <script>
+        count = 1;
+        text = document.getElementById("text");
+        var data = { a: null, b: null };
+        function run() {
+
+            const promise = new Promise((resolve, reject) => {
+                text.innerHTML += "Promise를 시작합니다.<br>";
+                text.innerHTML += count + " ==> 두 수를 랜덤하게 생성하여 더한 후 리턴?<br>";
+                count++;
+                a = Math.floor(Math.random() * 100);
+                b = Math.floor(Math.random() * 100);
+                data.a = a;
+                data.b = b;
+
+                resolve(data.a + data.b);
+            });
+
+            promise.then((msg) => {
+                console.log(data.a, data.b);
+                text.innerHTML += count + ' ==> ';
+                text.innerHTML += msg + '<br>';
+                text.innerHTML += "두 수를 랜덤하게 생성하여 곱한 값을 리턴<br>";
+                count++;
+                return (data.a * data.b);
+
+            }).then((msg) => {
+                text.innerHTML += count + ' ==> ';
+                console.log(data.a, data.b);
+                text.innerHTML += (data.a + data.b) + ', ' + (data.a * data.b) + '<br>';
+                text.innerHTML += "두 수의 합은 " + (data.a + data.b) + '<br>';
+                text.innerHTML += "두 수의 곱은 " + (data.a * data.b) + '<br>';
+                count = 0;
+            }).catch((error) => {
+                text.innerHTML += "error : " + error + "<br>";
+
+            })
+
+
+        }
+
+    </script>
+
+</body>
+
+</html>

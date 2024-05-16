@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="promiseTest();">실행</button> <br>
+    <p id="p1"> </p>
+
+    <script>
+        element = document.getElementById('p1');
+        let count = 1;
+
+        function promiseTest() {
+            const promise = new Promise((resolve, reject) => {
+                element.innerHTML += 'Promise를 시작합니다.<br>' + count + '==> 너의 이름은?<br>';
+                count++;
+                resolve("홍길동");
+
+            });
+
+            promise.then((msg) => {
+                console.log(msg);
+                if (msg == "홍길동") {
+                    element.innerHTML += count + '==> ' +msg+'<br>네가 가고 싶은 곳은?<br>';
+                    count++;
+                    return "홍길동은 일본";
+                }
+
+            }).then((msg) => {
+                if (msg == "홍길동은 일본") {
+                    element.innerHTML += count + '==> '+msg+'<br>'+msg+'을 가기를 희망한다<br>';
+                    count++;
+                }
+            }).catch((error) => {
+                element.innerHTML += 'error : ' + error;
+            })
+        }
+    </script>
+
+</body>
+
+</html>
